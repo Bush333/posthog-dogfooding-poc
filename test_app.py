@@ -10,6 +10,10 @@ class TestProductSearch(unittest.TestCase):
 
     def test_existing_search(self):
         self.assertIn("Banana", search_products("Ban"))
+    
+    def test_uppercase_search(self):
+        result = search_products("APPLE")
+        self.assertIn("Apple Watch", result)
 
 if __name__ == "__main__":
     unittest.main()
